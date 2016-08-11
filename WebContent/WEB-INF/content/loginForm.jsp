@@ -13,5 +13,28 @@
 	<s:textfield name="password" key="pass"/>
 	<s:submit key="login"/>
 </s:form>
+
+<table border="1" width="300">
+<s:iterator value="{'abc','bcd','cde'}" id="name" status="st">
+	<tr <s:if test="#st.odd">
+		style="background-color:#bbbbbb"</s:if>>
+		<td><s:property value="name"/></td>
+	</tr>
+</s:iterator>
+</table>
+<table border="1" width="350">
+	<tr>
+		<td>书名</td>
+		<td>作者</td>
+	</tr>
+	<s:iterator value="#{'abc':'cc','bcd':'dd','cde':'ee'}" id="score" status="st">
+	<tr <s:if test="#st.odd">
+	style="background-color:#bbbbbb"</s:if>>
+	<td><s:property value="key"/></td>
+	<td><s:property value="value"/></td>
+	</tr>
+	</s:iterator>
+	
+</table>
 </body>
 </html>

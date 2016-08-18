@@ -36,5 +36,17 @@
 	</s:iterator>
 	
 </table>
+<s:form>
+<s:select list="#{'疯狂java将以':'离岗','轻量级javaee':'李刚','疯狂ios讲义':'李刚'} " label="选择您喜欢的图书" name="book" size="7" listKey="value" listValue="key">
+<s:optgroup label="red johnson" list="#{'aaaaaa':'johnson'} " listKey="value" listValue="key"></s:optgroup>
+<s:optgroup label="cs" list="#{'bbbbb':'cs'} " listKey="value" listValue="key"></s:optgroup>
+</s:select>
+</s:form>
+
+<s:form action="login">
+<s:textarea name="username"/>
+<s:textarea name="password"/>
+<s:submit/>
+</s:form>
 </body>
 </html>

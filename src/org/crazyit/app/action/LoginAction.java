@@ -38,8 +38,8 @@ public class LoginAction extends ActionSupport
 	public String execute() throws Exception
 	{
 		// 当username为crazyit.org，password为leegang时即登录成功
-		if (getUsername().equals("crazyit.org")
-			&& getPassword().equals("leegang") )
+		if (username.equals("crazyit.org")
+			&& password.equals("leegang") )
 		{
 			ActionContext.getContext().getSession()
 				.put("user" , getUsername());

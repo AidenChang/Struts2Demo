@@ -8,6 +8,7 @@
 <title><s:text name="loginPage"/></title>
 </head>
 <body>
+${tip}
 <s:form action="login">
 	<s:textfield name="username" key="user"/>
 	<s:textfield name="password" key="pass"/>
@@ -43,7 +44,7 @@
 </s:select>
 </s:form>
 
-<s:form action="login">
+<s:form action="viewBook">
 <s:textarea name="username"/>
 <s:textarea name="password"/>
 <s:submit/>

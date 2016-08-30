@@ -1,5 +1,7 @@
 package org.crazyit.app.action;
 
+import java.util.Map;
+
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -41,8 +43,9 @@ public class LoginAction extends ActionSupport
 		if (username.equals("crazyit.org")
 			&& password.equals("leegang") )
 		{
-			ActionContext.getContext().getSession()
-				.put("user" , getUsername());
+			ActionContext ctx = ActionContext.getContext();
+			Map<String,Object> session = ctx.getSession();
+			session.put("user" , getUsername());
 			return SUCCESS;
 		}
 		return ERROR;

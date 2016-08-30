@@ -7,8 +7,17 @@
 	<constant name="struts.custom.i18n.resources" value="mess"/>
 	<constant name="struts.enable.DynamicMethodInvocation" value="false"/>
 	<constant name="struts.devMode" value="true" />
+	
 	<!-- 所有的Action定义都应该放在package下 -->	
 	<package name="crazyit" namespace="/" extends="struts-default">
+		<!-- 用户自定义拦截器 -->
+		<interceptors>
+			<!-- 定义一个拦截器 -->
+			<interceptor name="authority" class="org.crazyit.app.interceptor.AuthorityInterceprtor"/>
+		</interceptors>
+		<global-results>
+			<result name="login">/WEB-INF/content/loginForm.jsp</result>
+		</global-results>
 		<action name="login" class="org.crazyit.app.action.LoginAction">
 			<!-- 定义三个逻辑视图和物理资源之间的映射 -->
 			<result name="error">/WEB-INF/content/error.jsp</result>
@@ -19,7 +28,11 @@
 			<param name="savePath">/uploadFiles</param>
 			<result name="success">/WEB-INF/content/succ.jsp</result>
 		</action>
-		
+		<action name="viewBook">
+			<result>/WEB-INF/content/viewBook.jsp</result>
+			<interceptor-ref name="defaultStack"/>
+			<interceptor-ref name="authority"></interceptor-ref>
+		</action>
 		<action name="*">
 			<result>/WEB-INF/content/{1}.jsp</result>
 		</action>
